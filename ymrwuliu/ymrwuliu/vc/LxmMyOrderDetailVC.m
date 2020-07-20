@@ -32,7 +32,7 @@
     if (self) {
         self.layer.masksToBounds = YES;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor colorWithRed:241/255.0 green:182/255.0 blue:191/255.0 alpha:1];
+        self.backgroundColor = MainColor;
         [self initSubViews];
         [self setConstrains];
     }
@@ -158,6 +158,8 @@
 @property (nonatomic, strong) LxmWuLiuInfoRootModel *rootModel;/* 快递信息什么的 */
 
 @property (nonatomic, strong) NSArray <LxmWuLiuInfoStateModel *>*dataArr;
+@property(nonatomic,strong)UIView *tableHeadV;
+@property(nonatomic,strong)UILabel *headLB;
 
 @end
 
@@ -165,7 +167,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:241/255.0 green:182/255.0 blue:191/255.0 alpha:1]];
+    [self.navigationController.navigationBar setBarTintColor:MainColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -194,6 +196,17 @@
     if (self.postage_code.isValid) {
         [self loadWuLiuInfo];
     }
+    
+    self.tableHeadV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 30)];
+    self.tableHeadV.backgroundColor = [UIColor whiteColor];
+    self.headLB = [[UILabel alloc] initWithFrame:CGRectMake(40, 10, ScreenW - 55, 20)];
+    self.headLB.font = [UIFont systemFontOfSize:14];
+    self.headLB.textColor = CharacterDarkColor;
+    [self.tableHeadV addSubview:self.headLB];
+    self.tableView.tableHeaderView = self.tableHeadV;
+    
+    
+    
 }
 
 /**
@@ -455,11 +468,22 @@
                 selfWeak.shangpinTotalPrice += goods.proxy_price.floatValue * goods.num.intValue;
             }
             selfWeak.bottomView.model = selfWeak.detailModel.map;
+            NSString * str = @"无身份";
+            if (selfWeak.detailModel.map.role_type.intValue == 1) {
+                str = @"经理";
+            }else if (selfWeak.detailModel.map.role_type.intValue == 2) {
+                str = @"总经理";
+            }else if (selfWeak.detailModel.map.role_type.intValue == 3) {
+                str = @"董事";
+            }
+            self.headLB.text = [NSString stringWithFormat:@"%@ %@ %@",str,selfWeak.detailModel.map.t_name,selfWeak.detailModel.map.t_tel];
+            
             NSInteger status = selfWeak.detailModel.map.status.intValue;
             if (status == 2 || status == 3 || status == 7 || status == 8) {
                 [selfWeak.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
                     make.height.equalTo(@(TableViewBottomSpace + 60));
                 }];
+                
             } else {
                 [selfWeak.bottomView mas_updateConstraints:^(MASConstraintMaker *make) {
                     make.height.equalTo(@0);

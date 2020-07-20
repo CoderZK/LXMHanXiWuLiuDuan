@@ -81,6 +81,7 @@
 @property (nonatomic, strong) NSString *t_tel;/* 收货人姓名 */
 
 @property (nonatomic, strong) NSString *t_name;/* 收货人姓名 */
+@property (nonatomic, strong) NSString *role_type;
 
 @property (nonatomic, strong) NSArray  <LxmShopCenterOrderGoodsModel *>*sub;/* 商品列表 */
 
