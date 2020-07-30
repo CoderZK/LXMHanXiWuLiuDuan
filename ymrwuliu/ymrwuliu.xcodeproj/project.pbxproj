@@ -670,10 +670,10 @@
 			baseConfigurationReference = 560A5AA8275D978DFF6BC1E0 /* Pods-ymrwuliu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: Gu Haijian (2J25SFNA6P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B5NNLAT6HF;
+				DEVELOPMENT_TEAM = JC4A2LS9A4;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = ymrwuliu/PrefixHeader.pch;
 				INFOPLIST_FILE = ymrwuliu/Info.plist;
@@ -689,7 +689,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.biuwork.ymrwuliu;
 				PRODUCT_NAME = "寒晞物流端";
-				PROVISIONING_PROFILE_SPECIFIER = ymrwuliu_devprofile;
+				PROVISIONING_PROFILE_SPECIFIER = comxxxxx;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -699,10 +699,10 @@
 			baseConfigurationReference = 383B7961E0E9EB8CEABA3137 /* Pods-ymrwuliu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Jiangsu Yumei Jiaren Health Management Co., Ltd. (B5NNLAT6HF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B5NNLAT6HF;
+				DEVELOPMENT_TEAM = JC4A2LS9A4;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = ymrwuliu/PrefixHeader.pch;
 				INFOPLIST_FILE = ymrwuliu/Info.plist;
@@ -718,7 +718,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.biuwork.ymrwuliu;
 				PRODUCT_NAME = "寒晞物流端";
-				PROVISIONING_PROFILE_SPECIFIER = ymrwuliu_dis_profile;
+				PROVISIONING_PROFILE_SPECIFIER = comxxxxx;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
